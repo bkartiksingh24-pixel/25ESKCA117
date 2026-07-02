@@ -1,0 +1,17 @@
+.box{
+    min-width: 150px;
+    height: 100px;
+    background-color: rgb(240, 255, 240) ;
+    color: rgb(60, 0, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border border-radius: 8px ;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

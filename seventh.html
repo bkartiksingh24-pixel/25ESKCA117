@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Student Records</h2>
+        <input type="text" id="search" class="form-control mb-4" placeholder="Search Student">
+        <div id="container" class="row g-4"></div>
+    </div>
+    <script>
+        const students = [
+            { name: "KArtik bhati ", branch: "CSE", cgpa: 8.2 },
+            { name: "Shami", branch: "CSE", Cgpa: 6 },
+            { name: "krishna", branch: "CSE", Cgpa: 7.5 },
+        ];
+        let html = "";
+        for (let i = 0; i < students.length; i++) {
+            html +=`<div class="col-md-4 card-item">
+                    <div class="card shadow">
+                        <div class="card body">
+                            <h4>${students[i].name}</h4>
+                            <button class="btn btn-primary btn-sm mt-2">
+                                show details
+                            </button>
+                            <div class="details mt-3" style="display:none;">
+                                <p><strong>Branch:</strong> ${students[i].branch}</p>
+                                <p><strong>CGPA:</strong> ${students[i].cgpa}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+                document.getElementById("container").innerHTML = html;
+                $document.on("click","btn",function () {
+                    $(this).next("details").slideTOggle();
+                });
+
+                $("#search").keyup(function(){
+                    let val = $(this).val().tolowercase();
+                    $(".card-item").each(function(){
+                        let name = $(this).find("h4").text().tolowercase();
+                        if(name.include(val)){
+                            $(this).show();
+                        }
+                        else{
+                            $(this).hide();
+                        }
+                        });
+                    });
+                }
+                
+        
+    </script>
+    </head>
+</body>
+
+</html>

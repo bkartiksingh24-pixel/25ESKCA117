@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="X-UA-compatible" content="ie=edge"/>
+    <title>Registration</title>
+    <link rel="stylesheet" href="formstyleshesheet.css" />
+    <style>
+        h1{
+            color: chartreuse;
+        }
+    </style>
+</head>
+<body >
+    <form>
+        <h1 style="color: brown;">Registration Form </h1>
+        <label>
+            Name:
+        <input type="text" id="txtname"required placeholder="enter your name"/>
+        </label>
+        <label>
+            Email:
+            <input type="email" id="txtemail" required
+            placeholder="enter your email "/>
+        </label>
+         <label>
+            Phone no.:
+            <input type="phone" id="txtphone" required
+            placeholder="enter your phone "/>
+        </label>
+
+        <input type="radio" id="check-male" name="gender"/>
+        <label for="check-male">male</label>  
+        <input type="radio" id="check-female" name="gender"/>
+        <label for="check-female">female</label>
+         
+        <label for="dtDOB">DOB</label>  
+        <input type="date" id="dtDOB" name="dtDOB"/>
+
+        <label for="pwdConfirmPassword">confirm password</label>
+        <input type="password" id="pwdPassword" name="pwdPassword"/>   
+
+    </form>
+</body>
