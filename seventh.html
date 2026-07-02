@@ -32,7 +32,7 @@
                     <div class="card shadow">
                         <div class="card body">
                             <h4>${students[i].name}</h4>
-                            <button class="btn btn-primary btn-sm mt-2">
+                            <button class="btn btn-primary btn-sm mt-2" id="btn">
                                 show details
                             </button>
                             <div class="details mt-3" style="display:none;">
@@ -44,8 +44,11 @@
                 </div>
                 `
                 document.getElementById("container").innerHTML = html;
-                $document.on("click","btn",function () {
-                    $(this).next("details").slideTOggle();
+            }
+                
+                
+                $(document).on("click",".btn",function () {
+                    $(this).next(".details").slideToggle();
                 });
 
                 $("#search").keyup(function(){
@@ -60,7 +63,7 @@
                         }
                         });
                     });
-                }
+                
                 
         
     </script>
